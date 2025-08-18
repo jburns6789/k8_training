@@ -34,3 +34,6 @@ simplek8 % kubectl get pods
 simplek8 % kubectl get services
 
 access locally: localhost31515 (nodePort) per docker desktop
+
+Workflow: Request -> Load Balancer -> Node(s) carryover
+        Master -> declarative control over Node(s)
