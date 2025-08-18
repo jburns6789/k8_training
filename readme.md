@@ -37,3 +37,22 @@ access locally: localhost31515 (nodePort) per docker desktop
 
 Workflow: Request -> Load Balancer -> Node(s) carryover
         Master -> declarative control over Node(s)
+
+kubeapi has a list of responsibilties
+kubeapi servers is responsible for mantaining the nodes and implementing the list of responsibilties
+a copy of docker is running in all of the nodes 
+docker pulls the finished image onto the node and spins up containers per the request of the kube api-server
+
+the master working to constantly meet the demands of the list is one of the main kubernetes ideas
+
+to update the current state of k8, we need to update the master config file
+
+Imperative deployment vs Decalative deployment:
+
+Imperative: do exactly these steps to arrive at this container setup.
+Tedius lots of setup complicated
+Declartive: our container setup should look like this make it happen.
+Update the config file to implment changes
+
+INDUSTRY STANDARD IS DECLARATIVE APPROACH 
+kubectl has commands to use it through this approach
