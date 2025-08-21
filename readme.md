@@ -56,3 +56,29 @@ Update the config file to implment changes
 
 INDUSTRY STANDARD IS DECLARATIVE APPROACH 
 kubectl has commands to use it through this approach
+
+BREAK IN SECTION
+
+Objects will always have a name and a type Kind -> type of object
+updates are doen to the original config file
+if the object name is changed, a new object will be created
+
+after the image to be pull and configurations is completed:
+simplek8 % kubectl apply -f client-pod.yaml
+
+get information on a running pod:
+kubectl describe <object type> <object name>
+kubectl describe pod client-pod
+
+update config file -> verify its all working correctly, same process
+
+change from pod to deployments
+deployments have/manages multiples/sets of pods
+pods only usually used in dev environments
+
+deployment will attempt to restart pods when issues arise
+
+deployments are the production grade objects and pod management
+deployments have pod templates -> used to create pods
+
+deployment configuration files
