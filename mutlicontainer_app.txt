@@ -1,0 +1,24 @@
+node
+    taffic --> ingress service
+                    cluster ip and deployment
+                        pods
+
+                    cluster ip and deployment
+                        pods
+
+                    --> cluster IP service
+                        deployments
+                            multiworker
+
+                    --> cluster IP service
+                        deployments
+                            redis
+
+                    --> cluster IP service
+                        deployments
+                            postgres
+
+traffic flow from the wild to a node
+path to production --> 10-12 config files for the fib application
+
+                    

@@ -33,6 +33,31 @@ selector -> reaches out to the kubeapi to create the pod, when thats completed t
 kubectl get pods
 kubectl delete -f configfile
 kubectl apply -f client-deployment.yaml
+kubectl get deployments
+kubectl delete deployment client-deployment  
 
 kubectl get pods vs kubectl get deployments -> changing the objects were are looking for
+
+kubectl get pods -o wide
+
+ip and node, created pods get ip address, service is necessary to be a consistent ip address
+to connect to, pod ip address change all the time when recreated
+service will automatically reroute traffic based on the selector to new/created pods
+services give consistent access to pods
+
+kubectl describe pods <optional name of the pod>
+
+When a change to the image is made:
+docker build -t jbur645/multicontainerdeploy-client . <-- dot is important
+docker push jbur645/multicontainerdeploy-client
+workflow to update image changes
+
+most difficult aspect is convincing the deployment to update with the new image:
+if kubectl doesnt pick up on any changes it will reject the image you want it to update to
+
+imperative update command:
+kubectl set image <object type>/<object name><container_name>=<updated_image_to use>
+kubectl set image deployment/client-deployment client=jbur645/multicontainerdeploy-client:latest
+
+
 
